@@ -17,7 +17,7 @@ export class RouterLoader implements RouterLoaderInterface {
     loadTemplate(module: RouterModuleInterface): void {
         if ('template' in module) {
             // @ts-ignore
-            module.template();
+            module.template().then(x => console.log(x.default));
         }
 
     }

@@ -35,6 +35,10 @@ const config: Configuration & Record<string, any> = {
                 loader: 'ts-loader'
             },
             {
+                test: /\.html$/i,
+                loader: 'html-loader'
+            },
+            {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
                     {

@@ -9,6 +9,7 @@
     "build:prod": "webpack --config webpack.config.prod.ts"
   },
   "dependencies": {
+    "html-loader": "^4.2.0",
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
