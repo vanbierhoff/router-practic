@@ -3,9 +3,22 @@ import { RouterModuleInterface } from '../models/router-module-interface';
 
 
 export class RouterLoader implements RouterLoaderInterface {
-    
+
     async upload(module: RouterModuleInterface): Promise<any> {
-        return await module.component().then((component: any) => new component(...module.deps ?? []));
+        if ('template' in module) {
+            this.loadTemplate(module);
+        }
+        return await module.component().then((component: any) => {
+
+            return new component(...module.deps ?? []);
+        });
+    }
+
+    loadTemplate(module: RouterModuleInterface): void {
+        if ('template' in module) {
+            // @ts-ignore
+            module.template();
+        }
 
     }
 }
