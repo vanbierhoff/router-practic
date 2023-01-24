@@ -1,6 +1,6 @@
-import { routerStoreFactory } from '../router-module/router-store/factory/router-store-factory';
-import { RouterManager } from '../router-module/router-manager/router-manager';
-import { RouterLoader } from '../router-module/router-loader/router-loader';
+import { routerStoreFactory } from '../app-modules/router/router-store/factory/router-store-factory';
+import { RouterManager } from '../app-modules/router/router-manager/router-manager';
+import { RouterLoader } from '../app-modules/router/router-loader/router-loader';
 import APP from '../modules/app-module/app-module';
 
 

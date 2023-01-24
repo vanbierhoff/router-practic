@@ -15,7 +15,7 @@ export class RouterManager {
 
 
     async upload(path?: string): Promise<any> {
-        return await this.#routerLoader.upload(this.#routerStore.getRouteByPath());
+        return await this.#routerLoader.uploadModule(this.#routerStore.getRouteByPath()).then(data => console.log(data));
     }
 
 }

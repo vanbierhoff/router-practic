@@ -1,5 +1,5 @@
 import { RouterModuleInterface } from '../../models/router-module-interface';
-import { addMetaField } from '../../../shared/metadata/add-meta';
+import { addMetaField } from '../../../../shared/metadata/add-meta';
 import { V_META } from './models/v-module-meta';
 
 
@@ -15,12 +15,12 @@ export function VModuleDecorator(config: RouterModuleInterface): any {
                 super(...args);
                 const cfg = {
                     target,
-                    config,
-                    template: {}
+                    config
                 };
 
                 addMetaField(VModuleStoreInstance, V_META, cfg);
             }
+
         };
     };
 }

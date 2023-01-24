@@ -1,9 +1,10 @@
 export interface RouterModuleInterface {
     path?: string;
     deps?: [];
-    templateUrl?: string;
+    selector: string;
+
 
     template?(): Promise<any>;
 
-    component(): Promise<any>;
+    component(): Promise<abstract new (...args: any[]) => any>;
 }
