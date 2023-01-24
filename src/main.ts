@@ -1,11 +1,17 @@
 import './style.scss';
 import 'reflect-metadata';
-import ROUTER from './app/router-module/router-factory';
+import { ROUTER, startApp } from './app/start-app/start-app';
 
 
+
+// setTimeout(() => {
+//     ROUTER.upload().then(module => console.log(module));
+// }, 5000);
+
+startApp();
 
 setTimeout(() => {
-    ROUTER.upload().then(module => console.log(module));
+    ROUTER.upload('/').then();
 }, 5000);
 
 
