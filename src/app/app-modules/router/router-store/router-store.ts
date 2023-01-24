@@ -21,8 +21,13 @@ export class RouterStore implements RouterStoreInterface {
         return route;
     }
 
-    getRouteByPath(): RouterModuleInterface {
-        return this.#modulesList[0];
+    getRouteByPath(path: string): RouterModuleInterface {
+        const routerModule = this.#modulesList.find(route => route.path === path);
+
+        if (routerModule) {
+            return routerModule;
+        }
+        throw new Error(`module for ${path} path doesn't exist`);
     }
 }
 

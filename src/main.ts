@@ -11,7 +11,7 @@ import { ROUTER, startApp } from './app/start-app/start-app';
 startApp();
 
 setTimeout(() => {
-    ROUTER.upload().then();
+    ROUTER.upload('/').then();
 }, 5000);
 
 
