@@ -5,11 +5,11 @@ import { RouterStore } from '../router-store';
 
 
 
-export function routerStoreFactory(getRouteStrategy?: any): RouterStore {
+export function routerStoreFactory(): RouterStore {
     const modulesList: VModuleDecoratorInterface[] = Reflect.getMetadata(V_META, VModuleStoreInstance.constructor);
 
     const routesList = modulesList.map(item => item.config);
-    
-    return new RouterStore(routesList, getRouteStrategy || undefined);
+
+    return new RouterStore(routesList);
 
 }

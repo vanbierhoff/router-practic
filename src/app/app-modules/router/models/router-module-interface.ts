@@ -1,5 +1,5 @@
 export interface RouterModuleInterface {
-    path?: string;
+    path: string;
     deps?: [];
     selector: string;
 

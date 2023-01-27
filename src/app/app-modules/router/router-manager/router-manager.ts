@@ -1,5 +1,6 @@
 import { RouterStore } from '../router-store/router-store';
 import { RouterLoader } from '../router-loader/router-loader';
+import { VModule } from '../router-loader/models/v-module';
 
 
 export class RouterManager {
@@ -14,8 +15,8 @@ export class RouterManager {
     }
 
 
-    async upload(path: string): Promise<any> {
-        return await this.#routerLoader.uploadModule(this.#routerStore.getRouteByPath(path)).then(data => console.log(data));
+    async upload(path: string): Promise<VModule> {
+        return await this.#routerLoader.uploadModule(this.#routerStore.getRouteByPath(path));
     }
 
 }

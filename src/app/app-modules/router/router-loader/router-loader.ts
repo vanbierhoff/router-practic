@@ -1,22 +1,23 @@
 import { RouterLoaderInterface } from './models/router-loader-interface';
 import { RouterModuleInterface } from '../models/router-module-interface';
+import { VModule } from './models/v-module';
 
 
 export class RouterLoader implements RouterLoaderInterface {
 
-    async uploadModule(module: RouterModuleInterface): Promise<any> {
-        let template: Promise<HTMLElement> | undefined;
+    async uploadModule(module: RouterModuleInterface): Promise<VModule> {
+        let template: Promise<string> | undefined;
         if (module.template) {
             template = this.uploadTemplate(module);
         }
         const component: Promise<any> = this.uploadComponent(module);
-        
-        return Promise.all([{template}, {component}]);
+
+        return Promise.all([template, component, module.path, module.selector]);
 
     }
 
 
-    private async uploadTemplate(module: RouterModuleInterface): Promise<HTMLElement> {
+    private async uploadTemplate(module: RouterModuleInterface): Promise<string> {
         return module.template!().then(x => x.default);
     }
 

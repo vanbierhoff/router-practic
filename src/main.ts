@@ -1,17 +1,18 @@
 import './style.scss';
 import 'reflect-metadata';
 import { ROUTER, startApp } from './app/start-app/start-app';
+import { fromEvent } from 'rxjs';
 
-
-
-// setTimeout(() => {
-//     ROUTER.upload().then(module => console.log(module));
-// }, 5000);
 
 startApp();
 
-setTimeout(() => {
-    ROUTER.upload('/').then();
-}, 5000);
+
+const button = document.querySelector('.load');
+
+if (button) {
+    fromEvent(button, 'click').subscribe(() => {
+        ROUTER.uploadRoute('/');
+    });
+}
 
 

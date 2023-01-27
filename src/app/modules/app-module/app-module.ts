@@ -3,7 +3,7 @@ import { VModuleDecorator } from '../../app-modules/router/decorators/v-module/v
 
 @VModuleDecorator({
     path: '/',
-    selector: '#app',
+    selector: 'app',
     template: async () => await import('./view/app.template.html'),
     component: async () => await
         import( './app-component').then(m => m.AppComponent)

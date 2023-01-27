@@ -6,4 +6,6 @@ export interface RouterStoreInterface {
     add(route: RouterModuleInterface): void;
 
     remove(route: RouterModuleInterface): void;
+
+    getRouteByPath(route: string): RouterModuleInterface;
 }
